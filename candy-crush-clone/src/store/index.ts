@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 const initialState: {
     board: string[];
@@ -12,14 +12,14 @@ const candyCrushSlice = createSlice({
     name: "candyCrush",
     initialState,
     reducers: {
-
+        
     }
-})
+});
 
 export const store = configureStore({
     reducer: {
-        candyCrush: candyCrushSlice.reducer,
-    },
+        candyCrush: candyCrushSlice.reducer
+    }
 });
 
 export type RootState = ReturnType<typeof store.getState>
