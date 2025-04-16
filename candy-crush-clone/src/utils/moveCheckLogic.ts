@@ -74,5 +74,29 @@ export const checkForRowOfFour = (
     }
 };
 
+export const checkForRowOfThree = (
+    newBoard:string[],
+    boardSize:number,
+    invalidMoves:number[],
+) => {
+    for(let i:number=0; i<boardSize*boardSize; i++) {
+        const rowOfThree = [i, i+1, i+2]
+        const decidedColor: string = newBoard[i];
+
+        const isBlank: boolean = newBoard[i] === "";
+        if(invalidMoves.includes(i)) continue;
+        if (
+            rowOfThree.every(
+                (candy: number) => newBoard[candy] === decidedColor && !isBlank
+            )
+        ) {
+            rowOfThree.forEach((candy: number) => newBoard[candy] = "");
+            return true;
+        }
+    }
+};
+
+
+    
 
 
