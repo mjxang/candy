@@ -17,11 +17,11 @@ function Tile({candy,candyId}: {candy: string, candyId: number}) {
             candy-id={candyId}
             
             draggable={true}
-            onDragStart={() => dispatch(dragStart(candyId))}
+            onDragStart={() => dispatch(dragStart({ id: candyId, src: candy }))}
             onDragOver={(e) => e.preventDefault()}
             onDragEnter={(e) => e.preventDefault()}
             onDragLeave={(e) => e.preventDefault()}
-            onDrop={() => dispatch(dragDrop(candyId))}
+            onDrop={() => dispatch(dragDrop({ id: candyId, src: candy }))}
             onDragEnd={() => dispatch(dragEnd())}
             />
         )}

@@ -6,8 +6,8 @@ export const moveBelowReducer = (
     state: Draft<{
         board: string[];
         boardSize: number;
-        squareBeingReplaced: number | undefined;
-        squareBeingDragged: number | undefined;
+        squareBeingReplaced: { id: number; src: string; } | undefined;
+        squareBeingDragged: { id: number; src: string; } | undefined;
     }>
 ) => {
     const newBoard: string[] = [...state.board];
