@@ -1,1 +1,7 @@
-# candy
+# Short Summary
+Honestly, I didn’t really know what I wanted to do for this lab at first. I spent way too long just staring at my screen trying to figure something out. I don’t have a super clear career path yet, and that made it hard to pick a direction. But one day I saw my mom just vibing on the couch, completely zoned into Candy Crush like it was her full-time job, and it kind of hit me. I may not know exactly where I’m headed, but I do know that one day I want to make something that makes people happy—especially her. So I decided to make a small Candy Crush clone for this lab, just to try something new and meaningful.
+
+For the project, I used React for the component structure, Redux Toolkit with TypeScript to manage game state more cleanly, and Tailwind CSS for styling. Everything is front-end focused, but it really helped me build on the React foundation we’ve been working with in class. I got more comfortable working with TypeScript, and using Redux helped me understand how to manage more complex application logic. Even though I didn’t build a full MERN app, this project still connects to what we’ve learned through React and front-end architecture, especially in how I structured components, handled events, and managed state across different parts of the game.
+
+Overall, this lab was a nice mix of challenging and fun, and I’m proud of how it turned out. It gave me a chance to work with tech that I hadn’t fully explored before, and it reminded me that even if I’m unsure about my exact future, I know I want to create things that bring people joy—starting with my mom.
+
