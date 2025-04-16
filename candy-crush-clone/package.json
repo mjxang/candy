@@ -2,7 +2,7 @@
   "name": "candy-crush-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mjxang.github.io/candy-crush-clone",
+  "homepage": "https://mjxang.github.io/candy",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/dom": "^10.4.0",
