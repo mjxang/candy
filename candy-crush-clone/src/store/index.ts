@@ -18,6 +18,24 @@ const candyCrushSlice = createSlice({
     name: "candyCrush",
     initialState,
     reducers: {
+        dragStart: (state, action: PayloadAction<HTMLElement>) => {
+            state.squareBeingDragged = action.payload;
+        },
+        dragEnd: (state) => {
+            state.squareBeingDragged = undefined;
+        },
+        dragOver: (state, action: PayloadAction<HTMLElement>) => {
+            state.squareBeingReplaced = action.payload;
+        },
+        dragEnter: (state, action: PayloadAction<HTMLElement>) => {
+            state.squareBeingReplaced = action.payload;
+        },
+        dragLeave: (state) => {
+            state.squareBeingReplaced = undefined;
+        },
+        dragDrop: (state, action: PayloadAction<HTMLElement>) => {
+            state.squareBeingReplaced = undefined;
+        },
         updateBoard: (state, action: PayloadAction<string[]>) => {
             state.board = action.payload;
         },
