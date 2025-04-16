@@ -4,7 +4,8 @@ import { useAppDispatch, useAppSelector } from './store/hooks';
 import { createBoard } from './utils/createBoard';
 import Board from './components/Board';
 import { isColumnOfFour, isColumnOfThree } from './utils/moveCheckLogic';
-import { formulaForColumnOfFour, formulaForColumnOfThree } from './utils/formulas';
+import { formulaForColumnOfFour, formulaForColumnOfThree, generateInvalidMoves } from './utils/formulas';
+import { checkForRowOfFour } from './utils/moveCheckLogic';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -22,7 +23,9 @@ function App() {
     const timeout = setTimeout(()=>{
       const newBoard = [...board]
       isColumnOfFour(newBoard,boardSize,formulaForColumnOfFour(boardSize));
+      checkForRowOfFour(newBoard,boardSize,generateInvalidMoves(boardSize));
       isColumnOfThree(newBoard,boardSize,formulaForColumnOfThree(boardSize));
+      
       dispatch(updateBoard(newBoard))
     },150);
     return () => clearInterval(timeout)
