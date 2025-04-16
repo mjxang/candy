@@ -5,9 +5,13 @@ import { moveBelowReducer } from "./reducers/moveBelow";
 const initialState: {
     board: string[];
     boardSize: number;
+    squareBeingDragged: HTMLElement | undefined;
+    squareBeingReplaced: HTMLElement | undefined;
 } = {
     board: [],
     boardSize: 8,
+    squareBeingDragged: undefined,
+    squareBeingReplaced: undefined
 };
 
 const candyCrushSlice = createSlice({
@@ -27,7 +31,7 @@ export const store = configureStore({
     }
 });
 
-export const { updateBoard } = candyCrushSlice.actions; 
+export const { updateBoard, moveBelow } = candyCrushSlice.actions; 
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch

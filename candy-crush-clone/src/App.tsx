@@ -6,6 +6,7 @@ import Board from './components/Board';
 import { isColumnOfFour, isColumnOfThree } from './utils/moveCheckLogic';
 import { formulaForColumnOfFour, formulaForColumnOfThree, generateInvalidMoves } from './utils/formulas';
 import { checkForRowOfFour, checkForRowOfThree } from './utils/moveCheckLogic';
+import { moveBelow } from './store';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -28,6 +29,7 @@ function App() {
       checkForRowOfThree(newBoard, boardSize, generateInvalidMoves(boardSize));
 
       dispatch(updateBoard(newBoard))
+      dispatch(moveBelow());
     }, 150);
     return () => clearInterval(timeout)
   }, [board, boardSize, dispatch]);
