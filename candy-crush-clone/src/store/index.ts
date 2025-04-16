@@ -5,8 +5,8 @@ import { moveBelowReducer } from "./reducers/moveBelow";
 const initialState: {
     board: string[];
     boardSize: number;
-    squareBeingDragged: HTMLElement | undefined;
-    squareBeingReplaced: HTMLElement | undefined;
+    squareBeingDragged: number | undefined;
+    squareBeingReplaced: number | undefined;
 } = {
     board: [],
     boardSize: 8,
@@ -18,22 +18,22 @@ const candyCrushSlice = createSlice({
     name: "candyCrush",
     initialState,
     reducers: {
-        dragStart: (state, action: PayloadAction<HTMLElement>) => {
+        dragStart: (state, action: PayloadAction<number>) => {
             state.squareBeingDragged = action.payload;
         },
         dragEnd: (state) => {
             state.squareBeingDragged = undefined;
         },
-        dragOver: (state, action: PayloadAction<HTMLElement>) => {
+        dragOver: (state, action: PayloadAction<number>) => {
             state.squareBeingReplaced = action.payload;
         },
-        dragEnter: (state, action: PayloadAction<HTMLElement>) => {
+        dragEnter: (state, action: PayloadAction<number>) => {
             state.squareBeingReplaced = action.payload;
         },
         dragLeave: (state) => {
             state.squareBeingReplaced = undefined;
         },
-        dragDrop: (state, action: PayloadAction<HTMLElement>) => {
+        dragDrop: (state, action: PayloadAction<number>) => {
             state.squareBeingReplaced = undefined;
         },
         updateBoard: (state, action: PayloadAction<string[]>) => {
