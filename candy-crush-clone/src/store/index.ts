@@ -1,5 +1,6 @@
 import { createSlice, configureStore, PayloadAction } from "@reduxjs/toolkit";
 import { createBoard } from "../utils/createBoard";
+import { moveBelowReducer } from "./reducers/moveBelow";
 
 const initialState: {
     board: string[];
@@ -15,8 +16,9 @@ const candyCrushSlice = createSlice({
     reducers: {
         updateBoard: (state, action: PayloadAction<string[]>) => {
             state.board = action.payload;
-        }
-    }
+        },
+        moveBelow: moveBelowReducer
+    },
 });
 
 export const store = configureStore({
