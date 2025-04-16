@@ -1,12 +1,13 @@
-import { WritableDraft } from "immer/dist/types/types-external";
+import { Draft } from "@reduxjs/toolkit";
 import { formulaForMoveBelow } from "../../utils/formulas";
+import { candies } from "../../utils/candyData";
 
 export const moveBelowReducer = (
-    state: WritableDraft<{
+    state: Draft<{
         board: string[];
         boardSize: number;
-        squareBeingReplaced: Element | undefined;
-        squareBeingDragged: Element | undefined;
+        squareBeingReplaced: HTMLElement | undefined;
+        squareBeingDragged: HTMLElement | undefined;
     }>
 ) => {
     const newBoard: string[] = [...state.board];
